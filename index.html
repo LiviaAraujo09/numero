@@ -1,0 +1,197 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roulette 100 - Desafio dos Números</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <div class="background">
+        <div class="orb orb1"></div>
+        <div class="orb orb2"></div>
+    </div>
+
+    <main class="container">
+
+        <header>
+            <div class="logo">🎯 ROULETTE <span>100</span></div>
+
+            <div class="status">
+                <span class="status-dot"></span>
+                JOGO ONLINE
+            </div>
+        </header>
+
+        <section class="intro">
+            <p class="subtitle">DESAFIE SUA SORTE</p>
+
+            <h1>Descubra o <span>número secreto!</span></h1>
+
+            <p class="description">
+                O computador escolheu um número aleatório.
+                Será que você consegue descobrir?
+            </p>
+        </section>
+
+        <section class="game-card">
+
+            <div class="game-top">
+
+                <div>
+                    <span class="label">PONTUAÇÃO</span>
+                    <div class="score" id="score">0000</div>
+                </div>
+
+                <div class="attempt-box">
+                    <span class="label">TENTATIVAS</span>
+                    <div class="attempts" id="attempts">0 / 10</div>
+                </div>
+
+            </div>
+
+            <div class="number-display">
+
+                <div class="number-circle" id="numberCircle">
+                    <span id="displayNumber">?</span>
+                </div>
+
+                <p id="numberMessage">
+                    O número está entre 1 e 100
+                </p>
+
+            </div>
+
+            <div class="progress-area">
+
+                <div class="progress-info">
+                    <span>PROGRESSO DO DESAFIO</span>
+                    <span id="progressText">0%</span>
+                </div>
+
+                <div class="progress-bar">
+                    <div id="progressFill"></div>
+                </div>
+
+            </div>
+
+            <div class="input-area">
+
+                <label for="guess">DIGITE SEU PALPITE</label>
+
+                <div class="input-group">
+
+                    <input
+                        type="number"
+                        id="guess"
+                        placeholder="Ex: 42"
+                        min="1"
+                        max="100"
+                    >
+
+                    <button type="button" id="guessButton">
+                        TENTAR ↗
+                    </button>
+
+                </div>
+
+                <p class="feedback" id="feedback">
+                    💡 Digite um número e descubra se está certo!
+                </p>
+
+            </div>
+
+            <div class="hint-box">
+
+                <span>💡</span>
+
+                <div>
+                    <strong>DICA DO JOGO</strong>
+                    <p id="hint">A sorte favorece quem tenta!</p>
+                </div>
+
+            </div>
+
+            <div class="game-options">
+
+                <div>
+                    <label for="difficulty">DIFICULDADE</label>
+
+                    <select id="difficulty">
+                        <option value="easy">Fácil (15 tentativas)</option>
+                        <option value="normal" selected>Normal (10 tentativas)</option>
+                        <option value="hard">Difícil (7 tentativas)</option>
+                    </select>
+                </div>
+
+                <button type="button" class="restart-button" id="restartButton">
+                    ↻ NOVO JOGO
+                </button>
+
+            </div>
+
+        </section>
+
+        <section class="rules">
+
+            <h2>🏆 COMO JOGAR?</h2>
+
+            <div class="rules-grid">
+
+                <div class="rule">
+                    <span>01</span>
+                    <p>O computador sorteia um número secreto.</p>
+                </div>
+
+                <div class="rule">
+                    <span>02</span>
+                    <p>Você digita seu palpite entre 1 e 100.</p>
+                </div>
+
+                <div class="rule">
+                    <span>03</span>
+                    <p>Receba dicas para descobrir o número.</p>
+                </div>
+
+                <div class="rule">
+                    <span>04</span>
+                    <p>Acerte e conquiste muitos pontos!</p>
+                </div>
+
+            </div>
+
+        </section>
+
+        <footer>
+            <p>ROULETTE 100 © 2026</p>
+            <p>Feito para quem gosta de desafios 🎲</p>
+        </footer>
+
+    </main>
+
+    <!-- JANELA DE RESULTADO -->
+
+    <div class="modal" id="resultModal">
+
+        <div class="modal-content">
+
+            <div id="modalEmoji" class="modal-emoji">🏆</div>
+
+            <h2 id="modalTitle">VOCÊ CONSEGUIU!</h2>
+
+            <p id="modalText">Parabéns pelo resultado!</p>
+
+            <button type="button" id="playAgainButton">
+                JOGAR NOVAMENTE ↻
+            </button>
+
+        </div>
+
+    </div>
+
+</body>
+</html>
